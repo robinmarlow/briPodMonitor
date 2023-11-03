@@ -19,6 +19,7 @@ jobs:
             any::lubridate
             any::ggplot2
             any::tidyr
+            any::forcats
             any::purrr
             any::sofa
             any::janitor
