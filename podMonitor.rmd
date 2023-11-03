@@ -116,20 +116,19 @@ timeblock_fast<-data.frame(
   mutate(base_hour=factor(base_hour, levels=c(8:23,0:7)))%>%
   mutate(status = if_else(times %within% as.list(downtime), FALSE, TRUE))
 
-listOfDates<-c(seq(dmy("01-11-23"),today(),by="1 month"))
+#listOfDates<-c(seq(dmy("01-11-23"),today(),by="1 month"))
 
-startDate=listOfDates
-endDate=tail(listOfDates,-1)
+#startDate=listOfDates
+#endDate=tail(listOfDates,-1)
+
+startDate=dmy("1-11-23")
+endDate=now()
 
 startDate=ymd_hm(paste0(startDate,' 08:00'))
-endDate=c(ymd_hm(paste0(endDate,' 07:59')),now())
+#endDate=c(ymd_hm(paste0(endDate,' 07:59')),now())
 
-startDate<-rev(startDate)
-endDate<-rev(endDate)
-
-testFunc <- function(go,stop) {
-  paste0(go,"  ",stop)
-}
+#startDate<-rev(startDate)
+#endDate<-rev(endDate)
 
 render_child <- function(startDate, endDate) {
   res = knitr::knit_child(
