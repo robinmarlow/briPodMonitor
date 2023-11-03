@@ -9,12 +9,15 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(lubridate)
+library(purrr)
 library(sofa)
 library(janitor)
 library(jsonlite)
 library(glue)
-#library(pluralize)
 library(htmltools)
 
 SECRET_USR <- Sys.getenv("SECRET_USR")
